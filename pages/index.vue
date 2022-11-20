@@ -14,14 +14,14 @@
             icon
             slot="append"
             style="margin-top: -0.4em;"
-            @click="search(search_input)"
+            @click="search()"
           >
             <v-icon>mdi-magnify</v-icon>
           </v-btn>
         </v-text-field>
       </div>
-      <ul class="form-results">
-        <li v-for="i in 20" :key="i">asfdosdajflksd</li>
+      <ul class="form-results" v-show="search_response.length !== 0">
+        <li v-for="i in search_response" :key="i">{{ i.title }}</li>
       </ul>
     </div>
     <div class="main-right">
@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import * as JsSearch from 'js-search';
 import * as database from "~/assets/database.json";
 export default {
   name: 'index',
@@ -58,45 +59,31 @@ export default {
     return {
       tab: "one",
       tab_content: {
-        one: [
-          {
-            title: "Test"
-          },
-          {
-            title: "Test"
-          },
-          {
-            title: "Test"
-          },
-          {
-            title: "Test"
-          },
-          {
-            title: "Test"
-          },
-          {
-            title: "Test"
-          },
-          {
-            title: "Test"
-          },
-        ],
-        two: [
-
-        ],
-        three: [
-
-        ]
+        one: [],
+        two: [],
+        three: []
       },
-      methods: {
-        search(request){
-          
-        }
-      },
+      search_response: []
+    }
+  },
+  methods: {
+    search(){
+      const request = this.search_input;
+      const search = new JsSearch.Search('title');
+      search.addIndex(['title']);
+      search.addIndex(['link']);
+      search.addIndex(['tags']);
+      let resp = [];
+      database.articles.forEach(function(item, i, arr) {
+        search.addDocuments([item]);
+        resp = search.search(request);
+      });
+      this.search_response = resp;
+      console.log(this.search_response);
     }
   },
   created() {
-    console.log(database);
+    console.log(database.articles);
   },
 }
 </script>

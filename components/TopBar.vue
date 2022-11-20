@@ -9,7 +9,7 @@
     >
         <v-btn
             icon
-            @click="$router.push('/')"
+            @click="$router.push('/IndieWiki/')"
             v-if="back_button"
         >
             <v-icon>mdi-chevron-left</v-icon>
@@ -52,7 +52,7 @@ export default {
     },
     mounted() {
         this.title = document.title;
-        if (window.location.pathname === "/"){
+        if (window.location.pathname === "/IndieWiki/"){
             this.back_button = false;
         } else {
             this.back_button = true;

@@ -1,11 +1,14 @@
 {
     "articles": [
         {
-            "title": "anderia",
-            "link": "anderia",
+            "title": "Secrets of anderia",
+            "link": "/articles/anderia",
             "languages": [ "ru" ],
             "tags": [
-                "андерия, secrets of anderia, geek man"
+                "андерия",
+                "anderia",
+                "secrets of anderia",
+                "geek man"
             ]
         }
     ]
