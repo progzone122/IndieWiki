@@ -10,6 +10,7 @@
 <ul>
         <ul style="padding: 0; list-style-type: none; margin-left: -1.5em;">
             <p style="font-weight: 600;">Шкала активности:</p>
+            <li><p style="font-weight: 500;">[23.11.22]</p><p style="color: orange;">Доступен репозиторий Godot версии игры на GitHub</p></li>
             <li><p style="font-weight: 500;">[Спустя некоторое время]</p><p style="color: red;">Окончательная заморозка проекта, удаление игры со всех площадок, репозиторий на GitHub теперь приватный</p></li>
             <li><p style="font-weight: 500;">[10.04.22]</p><p style="color: orange;">Доступен репозиторий GeekManOfficial/Secrets-of-Anderia на GitHub</p></li>
             <li><p style="font-weight: 500;">[27.03.22]</p><p>Новый моб Фантом</p></li>
