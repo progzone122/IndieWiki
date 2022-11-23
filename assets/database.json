@@ -1,9 +1,8 @@
 {
     "articles": [
         {
+            "id": "secrets-of-anderia",
             "title": "Secrets of anderia",
-            "link": "/articles/anderia",
-            "languages": [ "ru" ],
             "tags": [
                 "андерия",
                 "anderia",

@@ -21,7 +21,7 @@
         </v-text-field>
       </div>
       <ul class="form-results" v-show="search_response.length !== 0">
-        <li v-for="i in search_response" :key="i">{{ i.title }}</li>
+        <li v-for="i in search_response" :key="i" @click="$router.push({ name: 'wiki', query: { id: i.id } })">{{ i.title }}</li>
       </ul>
     </div>
     <div class="main-right">
@@ -31,7 +31,6 @@
       >
         <v-tab @click="tab = 'one'">Рекомендуемое</v-tab>
         <v-tab @click="tab = 'two'">Новое</v-tab>
-        <v-tab @click="tab = 'three'">Последние коммиты</v-tab>
       </v-tabs>
 
       <v-card-text>
@@ -41,9 +40,9 @@
           <ul v-if="tab === 'two'">
             <li v-for="i in tab_content.two" :key="i">{{ i.title }}</li>
           </ul>
-          <ul v-if="tab === 'three'">
+          <!-- <ul v-if="tab === 'three'">
             <li v-for="i in tab_content.three" :key="i">{{ i.title }}</li>
-          </ul>
+          </ul> -->
       </v-card-text>
     </div>
   </div>
@@ -55,13 +54,12 @@ import * as database from "~/assets/database.json";
 export default {
   name: 'index',
   layout: "default",
-  data() {
+  asyncData() {
     return {
       tab: "one",
       tab_content: {
         one: [],
-        two: [],
-        three: []
+        two: []
       },
       search_response: []
     }

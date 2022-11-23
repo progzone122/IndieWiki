@@ -4,12 +4,11 @@
       fixed
       app
       elevation="0"
-      color="transparent"
       class="bar"
     >
         <v-btn
             icon
-            @click="$router.push('/IndieWiki/')"
+            @click="$router.push('/')"
             v-if="back_button"
         >
             <v-icon>mdi-chevron-left</v-icon>
@@ -28,17 +27,19 @@
         </v-btn> -->
         <v-toolbar-title>{{ title }}</v-toolbar-title>
         <v-spacer />
-        <v-btn
-            icon
-        >
-            <v-icon>mdi-github</v-icon>
-        </v-btn>
-        <v-btn
+        <a href="https://github.com/progzone122/IndieWiki" target="_blank">
+            <v-btn
+                icon
+            >
+                <v-icon>mdi-github</v-icon>
+            </v-btn>
+        </a>
+        <!-- <v-btn
             icon
             @click.stop="rightDrawer = !rightDrawer"
         >
             <v-icon>mdi-menu</v-icon>
-        </v-btn>
+        </v-btn> -->
     </v-app-bar>
 </template>
 <script>
@@ -62,6 +63,8 @@ export default {
 </script>
 <style lang="scss">
     .bar{
-        padding: 1em;
+        padding: 0.5em;
+        background-color: $color2 !important;
+        height: auto !important;
     }
 </style>

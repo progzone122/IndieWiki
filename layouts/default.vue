@@ -1,7 +1,7 @@
 <template>
   <v-app class="content" dark>
     <TopBar />
-    <v-main>
+    <v-main style="margin-top: 5em;">
       <v-container>
         <Nuxt />
       </v-container>

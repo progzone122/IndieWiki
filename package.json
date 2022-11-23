@@ -19,6 +19,7 @@
     "core-js": "^3.25.3",
     "js-client-search": "^1.0.2",
     "js-search": "^2.0.0",
+    "markdown-it-highlightjs": "^4.0.1",
     "nuxt": "^2.15.8",
     "push-dir": "^0.4.1",
     "vue": "^2.7.10",
